@@ -1,0 +1,133 @@
+# Job Search Agent — configuration template
+# Copy this file to config.yaml and fill it in.
+# config.yaml is git-ignored so your personal details never get pushed.
+# See examples/ for a complete worked example.
+
+candidate:
+  # File name of your CV in the project files / skill folder. Never commit it.
+  cv_file: "my_cv.docx"
+  # How the agent should present you, in one line.
+  positioning: "Senior <role> with <N>+ years in <domains>"
+  # Supporting strengths, mentioned only as a multiplier.
+  secondary_strengths:
+    - "<e.g. stakeholder management>"
+  # Languages you can work in. Roles requiring any other language as mandatory are skipped.
+  languages:
+    - name: English
+      level: C1
+    # - name: Spanish
+    #   level: B2
+
+roles:
+  track: "<short label shown in the opening line, e.g. QA, Data, Frontend>"
+  # Role types you want. Used by the relevance filter.
+  target_types:
+    - "<e.g. Frontend Engineer>"
+  # Role types that look similar but are wrong for you. Always skipped.
+  reject_types:
+    - "<e.g. Frontend Designer>"
+  # Title sets for search queries. Keep 3–4 exact phrases per set.
+  # The first set runs every session. Others run in BACKFILL.
+  # daily: true also runs the set as a Google Jobs query in DAILY sessions.
+  title_sets:
+    A:
+      titles: ["<title 1>", "<title 2>", "<title 3>"]
+    B:
+      titles: ["<title 4>", "<title 5>", "<title 6>"]
+    # C:
+    #   titles: ["<specialist title>"]
+    #   daily: true
+    #   reject_if: "<results to discard, e.g. pure research roles>"
+
+seniority:
+  accept: ["Senior", "Mid-level if it meets the salary floor"]
+  hard_skip: ["Entry level (0–2 years)"]
+  # Appended to every site: query. Don't exclude words that overlap with your level.
+  query_exclusions: "-junior -intern -graduate -trainee -principal -director -head"
+
+locations:
+  default_scope: home
+  # Offered after results, one at a time, never combined.
+  other_scopes: [country, region_remote, worldwide_remote, relocation]
+  work_models: [remote, hybrid]   # add on-site if you accept it
+  scopes:
+    home:
+      label: "<Your city>"
+      terms: ["<City>", "Remote <Country>", "Remote <Region>"]
+    country:
+      label: "<Country>"
+      terms: ["<Country>", "<City 2>", "<City 3>", "Remote <Country>"]
+    region_remote:
+      label: "<Region> remote"
+      terms: ["Remote <Region>", "<Region> hybrid"]
+    worldwide_remote:
+      label: "Worldwide remote"
+      terms: ["Remote"]   # bare "Remote" is only allowed here
+    relocation:
+      label: "Relocation"
+      terms: ["relocation"]
+  relocation:
+    # Where you can already work without a visa.
+    work_authorisation: ["<e.g. EU>"]
+    # Outside that area, visa sponsorship must be confirmed or the role is skipped.
+    visa_sponsorship_required_outside_authorisation: true
+    cities:
+      - "<City, Country>"
+
+salary:
+  currency: EUR
+  # Gross annual. Roles are skipped only when the top of the listed range is below this.
+  # Equal to the floor passes; roles with no salary listed are kept.
+  global_floor: 0
+  # Optional per-city floors in local currency. Effective floor = max(city floor, converted global floor).
+  city_floors:
+    # "London": "GBP 75,000"
+
+sources:
+  boards:
+    every_session: ["wellfound.com"]
+    local: []
+    regional: []
+    remote: ["weworkremotely.com", "remoteok.com"]
+    relocation: ["relocate.me"]
+  never_use: []
+
+companies:
+  # Companies whose careers sites the ATS sweep won't find.
+  # DAILY checks one batch per weekday (Mon = 1 … Sat = 6, Sun = 1). BACKFILL checks all.
+  batches:
+    1: []
+    2: []
+    3: []
+    4: []
+    5: []
+    6: []
+  # Companies with a public ATS job feed, read directly in BACKFILL sessions.
+  # ats: greenhouse | lever | ashby | workable. board: the name in the company's job-board URL,
+  # e.g. job-boards.greenhouse.io/<board>, jobs.lever.co/<board>, jobs.ashbyhq.com/<board>, apply.workable.com/<board>.
+  # Workday and SmartRecruiters companies go in batches instead.
+  ats_feeds: []
+    # - company: Example Co
+    #   ats: greenhouse
+    #   board: exampleco
+  # Never checked unless you ask.
+  dropped: []
+
+tracker:
+  # notion: a Notion database Claude can update (needs the Notion connector).
+  # file: a file in your project (read only, e.g. a PDF or spreadsheet).
+  # none: no tracker.
+  type: none
+  notion_data_source: ""   # e.g. collection://1234abcd-... (Claude can create the database for you)
+  notion_url: ""           # the database link, for your reference
+  file: ""                 # used when type is file
+
+exclusions:
+  # Months after which a rejected / unanswered / withdrawn application at the same company and a similar role
+  # no longer hides new postings. Different roles at the same company are never hidden.
+  reapply_after_months: 6
+  # Companies or roles to always skip.
+  manual: []
+
+output:
+  language: "British English"

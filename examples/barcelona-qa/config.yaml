@@ -1,0 +1,312 @@
+# Worked example: Senior QA Automation / AI QA engineer based in Barcelona.
+# Company lists and job feeds verified 29 September 2026. Companies change ATS, so re-audit every quarter.
+# Copy to the skill root as config.yaml and adapt.
+
+candidate:
+  cv_file: my_cv.docx
+  positioning: Senior QA Automation Engineer and AI QA specialist (8+ years, ISTQB CTFL and CT-AI)
+  secondary_strengths:
+  - 'UX research: user-centred testing, collaboration with Design and Product'
+  languages:
+  - name: English
+    level: C1
+  - name: Spanish
+    level: B2
+  - name: Russian
+    level: Native
+  - name: Ukrainian
+    level: Native
+roles:
+  track: QA
+  target_types:
+  - QA / Test Automation Engineer
+  - SDET
+  - QA Manual (senior)
+  - AI / ML / LLM testing and evaluation
+  reject_types:
+  - UX Research
+  - Customer Success
+  - Account Management
+  - Project Management
+  - Contact-centre QA
+  - Sales QA
+  - Pure data science
+  - Non-software QA/QC (manufacturing, construction)
+  title_sets:
+    A:
+      titles:
+      - QA Engineer
+      - Quality Engineer
+      - QA Automation
+      - SDET
+    B:
+      titles:
+      - Test Engineer
+      - Test Automation
+      - Automation Engineer
+      - Quality Assurance
+    C:
+      titles:
+      - AI QA
+      - AI Test Engineer
+      - LLM Evaluation
+      - AI Quality Engineer
+      daily: true
+      reject_if: ML or data-science roles with no testing or evaluation responsibility
+seniority:
+  accept:
+  - Senior (5+ years)
+  - Mid-level titled plainly 'QA Engineer' / 'Automation Engineer' if it meets the salary floor
+  hard_skip:
+  - Entry level (0–2 years)
+  query_exclusions: -junior -intern -graduate -trainee -principal -director -head
+locations:
+  default_scope: barcelona
+  other_scopes:
+  - spain
+  - emea
+  - worldwide_remote
+  - relocation
+  work_models:
+  - remote
+  - hybrid
+  scopes:
+    barcelona:
+      label: Barcelona
+      terms:
+      - Barcelona
+      - Remote Spain
+      - Remote Europe
+    spain:
+      label: Spain
+      terms:
+      - Spain
+      - Madrid
+      - Valencia
+      - Remote Spain
+    emea:
+      label: EMEA remote
+      terms:
+      - Remote EMEA
+      - Remote Europe
+      - Europe hybrid
+    worldwide_remote:
+      label: Worldwide remote
+      terms:
+      - Remote
+    relocation:
+      label: Worldwide relocation
+      terms:
+      - relocation
+  relocation:
+    work_authorisation:
+    - EU
+    visa_sponsorship_required_outside_authorisation: true
+    cities:
+    - 'Europe: any city'
+    - 'UK: London, Bristol'
+    - 'Ireland: Dublin'
+    - 'USA: any big city'
+    - 'Asia: Tokyo, Osaka, Hong Kong, Singapore, Seoul'
+    - 'UAE: Dubai, Abu Dhabi'
+    - 'Australia: Sydney, Melbourne, Brisbane, Perth'
+salary:
+  currency: EUR
+  global_floor: 55000
+  city_floors:
+    Barcelona / Spain: EUR 55,000
+    Other European cities: EUR 55,000
+    London: GBP 75,000
+    Bristol: GBP 60,000
+    Dublin: EUR 65,000
+    New York: USD 105,000
+    Los Angeles: USD 95,000
+    Other big US cities: USD 95,000
+    Dubai / Abu Dhabi: AED 240,000 (tax-free)
+    Sydney / Melbourne: AUD 100,000
+    Brisbane / Perth: AUD 90,000
+    Singapore: SGD 90,000
+    Hong Kong: HKD 480,000
+    Tokyo: JPY 8,500,000
+    Osaka: JPY 7,500,000
+    Seoul: KRW 90,000,000
+sources:
+  boards:
+    every_session:
+    - testingjobs.io
+    - qajobs.com
+    - otta.com
+    - wellfound.com
+    local:
+    - infojobs.net
+    regional:
+    - eurotechjobs.com
+    remote:
+    - himalayas.app
+    - remotive.com
+    - weworkremotely.com
+    - remoteok.com
+    - workingnomads.com
+    relocation:
+    - relocate.me/international-jobs
+    - jobright.ai
+  never_use:
+  - totaljobs.com
+companies:
+  batches:
+    1:
+    - Google
+    - Apple
+    - Amazon
+    - Microsoft
+    - Meta
+    - Netflix
+    - IBM
+    - SAP
+    - Siemens
+    - Inditex
+    - King (careers.king.com)
+    - Amadeus
+    - Zalando
+    - Canva
+    - Factorial
+    2:
+    - Booking.com
+    - Nestlé
+    - L'Oréal
+    - Skyscanner
+    - Lego
+    - Haribo
+    - Mercedes-Benz
+    - Adidas
+    - British Airways
+    - Elastic
+    - Mango
+    - Airbus
+    - Philips
+    - Docplanner
+    - Amenitiz
+    3:
+    - Trivago
+    - Miro
+    - Stripe
+    - Danone
+    - JustEat
+    - Glovo
+    - TravelPerk
+    - Jobandtalent
+    - Hibob
+    - Mews
+    - BBVA
+    - Santander
+    - Roche
+    - AboutYou
+    - Intercom
+    4:
+    - Brevo
+    - Dynatrace
+    - Wise
+    - Klarna
+    - CaixaBank
+    - Airbnb
+    - Riot Games
+    - Mercari
+    - Disney
+    - eBay
+    - AstraZeneca
+    - HP
+    - Slack
+    - LinkedIn
+    - ASOS
+    5:
+    - Nike
+    - Preply
+    - Pandora (jewellery, careers.pandoragroup.com)
+    - Cognizant
+    - Scopely
+    - NTT Data
+    - Thoughtworks
+    - Datadog
+    - HubSpot
+    - Zoom
+    - Zendesk
+    - Salesforce
+    - ServiceNow
+    6:
+    - Vinted
+    - Holded
+    - Signaturit
+    - Sotheby's
+    - Seat:Code
+    - Revolut
+    - Personio
+    - Oysho
+    - Ciklum
+    - Workday
+    - Dior
+    - GlobalLogic
+    - H&M Group
+  ats_feeds:
+  - company: MongoDB
+    ats: greenhouse
+    board: mongodb
+  - company: Typeform
+    ats: greenhouse
+    board: typeform
+  - company: JetBrains
+    ats: greenhouse
+    board: jetbrains
+  - company: Wallapop
+    ats: greenhouse
+    board: wallapop
+  - company: Cabify
+    ats: greenhouse
+    board: cabify
+  - company: FreeNow
+    ats: greenhouse
+    board: freenow
+  - company: Revlon
+    ats: greenhouse
+    board: revloncorporate
+  - company: Deliveroo
+    ats: greenhouse
+    board: deliveroo
+  - company: Spotify
+    ats: lever
+    board: spotify
+  - company: Airalo
+    ats: lever
+    board: airalo
+  - company: Lodgify
+    ats: lever
+    board: lodgify
+  - company: Qonto
+    ats: lever
+    board: qonto
+  - company: Farfetch
+    ats: lever
+    board: farfetch
+  - company: Vestiaire Collective
+    ats: lever
+    board: vestiairecollective
+  - company: Bumble
+    ats: ashby
+    board: bumbleinc
+  - company: Kantox
+    ats: workable
+    board: kantox
+  dropped:
+  - Badi
+  - Stuart (no open roles on its careers page or Workable feed, Sept 2026)
+tracker:
+  type: notion
+  notion_data_source: ''
+  notion_url: ''
+  file: ''
+exclusions:
+  # Months after which a rejected / unanswered / withdrawn application at the same company and a similar role
+  # no longer hides new postings. Different roles at the same company are never hidden.
+  reapply_after_months: 6
+  manual: []
+output:
+  language: British English
