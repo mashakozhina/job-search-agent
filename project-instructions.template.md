@@ -1,8 +1,7 @@
 # Project instructions template
 
-Paste the text between the lines into your Claude Project's **instructions** field
-(Project → Instructions / "Set project instructions"). Replace the <placeholders>.
-Keep it short: the rules live in the skill, this only connects the skill to your files.
+Paste the text between the lines into your Claude app Project's **instructions** field
+(Projects → Project Name → Instructions). Keep it short: the rules live in the skill, this only connects the skill to your files.
 
 ---
 
