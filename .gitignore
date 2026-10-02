@@ -5,3 +5,6 @@
 *.doc
 *tracker*
 .DS_Store
+*tracker*.pdf
+*tracker*.xlsx
+*tracker*.csv
